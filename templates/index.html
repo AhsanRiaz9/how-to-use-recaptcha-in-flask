@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask ReCaptcha Tutorial</title>
+    </head>
+    <body>
+        <form method="POST"> <!-- Sends POST request to flask server -->
+            {{ recaptcha }} <!-- Refer to 'recaptcha' variable in main.py -->
+            <input type="submit" value="Submit">
+        </form>
+        <p>{{ message }}</p> <!-- Message to tell user whether or not they have filled out ReCaptcha -->
+    </body>
+</html>
