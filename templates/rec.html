@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <script>
+       function onSubmit(token) {
+           grecaptcha.execute();
+         document.getElementById("demo-form").submit();
+       }
+     </script>
+  </head>
+  <body>
+    <form id='demo-form' action="/registerUser" method="POST">
+        <div class="g-recaptcha"
+              data-sitekey="{{ recaptcha_key }}"
+              data-callback="onSubmit"
+              data-size="invisible">
+      </div>
+        <input type="text" name="name" value="Ahsan Riaz"/>
+      <button class="g-recaptcha" data-sitekey="{{ recaptcha_key }}" data-callback='onSubmit'>Submit</button>
+      <br/>
+    </form>
+  </body>
+</html>
